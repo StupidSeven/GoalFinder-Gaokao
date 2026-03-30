@@ -1,34 +1,36 @@
-# GoalFinder — 高考志愿智能填报系统
+# GoalFinder (探路者) — 高考志愿智能填报决策系统
 
-> **助力学子探寻理想路径，科学决策未来。**
-
-`GoalFinder` 是一款参考行业级 **EMS (电力管理系统)** 标准打造的高考志愿填报决策支持系统。它结合了大数据抓取、AI 策略建议与严谨的志愿表诊断功能，旨在消除信息差，为全国考生提供最精准、最易用的填报方案。
-
-## 📖 文档导航
-
-为了让您快速了解本项目，请根据需求查阅以下详细文档：
-
-1. **[核心设计方案 (Design Specification)](file:///Users/tradingfront/Projects/Volunteer/GOALFINDER-DESIGN.md)**
-   - 包含：项目背景、竞品分析（夸克/百度/掌上高考）、UI 视觉规范（教育类风格）。
-2. **[数据采集与反爬架构 (Data Engineering)](file:///Users/tradingfront/Projects/Volunteer/GOALFINDER-SCRAPER-DESIGN.md)**
-   - 包含：Python 分布式抓取、考试院反爬策略应对、人工复核工作流。
-3. **[核心推荐算法 (Algorithm Spec)](file:///Users/tradingfront/Projects/Volunteer/GOALFINDER-ALGORITHM-SPEC.md)**
-   - 包含：位次偏移法、冲稳保逻辑、志愿表全自动诊断算法。
-4. **[开发与上线路线图 (Roadmap)](file:///Users/tradingfront/Projects/Volunteer/GOALFINDER-ROADMAP.md)**
-   - 包含：分阶段里程碑、高考出分高峰期数据抢抓时间表。
-
-## 🚀 核心亮点
-
-- **教育美学 UI**：精心设计的“阳光蓝”与“常青绿”界面，缓解填报焦虑。
-- **AI 赋能驱动**：利用 LLM 自动解析招生简章，实现全自动信息提取与冲突检测。
-- **极致数据准确**：三级复核机制，确保作为决策依据的投档线数据万无一失。
-- **全国通用建模**：适配新老高考、专业组制等全国主流报考规则。
+> **对标 EMS 专业架构标准 | 针对辽宁省高精度适配 | AI 驱动的生涯风险对冲**
 
 ---
 
-## 🛠 技术栈预览
+## 📖 项目导航 (Documentation Portal)
 
-- **前端**: Next.js 15, Tailwind CSS, Shadcn UI
-- **后端**: FastAPI (Python), PostgreSQL, TimescaleDB
-- **数据**: Playwright, Scrapy, Redis, Gemini AI (OCR/NLP)
-- **部署**: Docker / Kubernetes (具备高并发弹性缩放能力)
+根据您的身份与需求，点击下方链接进入对应的专业文档：
+
+### 🏁 面向非技术人员 (推荐)
+- **[《项目执行摘要白皮书 (v2.0)》](./GOALFINDER-WHITE-PAPER.md)**：包含业务愿景、核心竞争力 (112-志愿魔方/趋势图) 及生涯 ROI 模型。
+- **[《分阶段开发路线图 (交互网页版)》](./GOALFINDER-ROADMAP.html)**：一目了然的可视化研发进度。
+- **[《产品概念推介页 (Interactive Intro)》](./GOALFINDER-INTRO.html)**：快速了解 GoalFinder 的产品魅力。
+
+### 🛠️ 面向研发与管理人员
+- **[《技术规格说明书 (Tech-Spec)》](./GOALFINDER-TECH-SPEC.md)**：包含微服务架构、数据库 DDL (建表语句) 及 API 设计。
+- **[《业务决策逻辑规格书》](./GOALFINDER-BUSINESS-SPEC.md)**：深度拆解辽宁省 3+1+2 规则引擎与位次对冲算法。
+- **[《管理后台操作手册 (Admin)》](./GOALFINDER-ADMIN-MANUAL.md)**：三级复核流水线与动态策略配置指南。
+
+---
+
+## 🚀 核心技术亮点 (Technical Highlights)
+
+- **后端**: FastAPI + PostgreSQL (pgvector) 实现秒级位次检索与生涯语义匹配。
+- **前端**: Next.js 14 响应式 Web + React Native 移动 App 双端交付。
+- **算法**: 位次-扩招相关性修正模型，将预测误差控制在 ±5 排名以内。
+
+## 📈 阶段性成果 (Milestones)
+
+- [x] 完成辽宁省“专业+学校”模式深度建模。
+- [x] 构建工业级三级复核 Admin 后台原型。
+- [x] 发布视觉化历年位次变动趋势分析引擎。
+
+---
+© 2026 GoalFinder | 让每一分都落地有声
