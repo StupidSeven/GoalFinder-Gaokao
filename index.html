@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoalFinder | 高考志愿智能填报决策系统</title>
+    <!-- Google Fonts: Inter & Noto Sans SC -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4A90E2', // 阳光蓝
+                        secondary: '#50E3C2', // 常青绿
+                        accent: '#FFD700', // 金榜金
+                        dark: '#1F2937',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans SC', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .scroll-reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+        .gradient-bg { background: linear-gradient(135deg, #f0f7ff 0%, #e6fffb 100%); }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+
+    <!-- Header -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">G</div>
+            <span class="text-xl font-bold tracking-tight text-primary">GoalFinder</span>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
+            <a href="#features" class="hover:text-primary transition">系统功能</a>
+            <a href="#algorithm" class="hover:text-primary transition">核心算法</a>
+            <a href="#roadmap" class="hover:text-primary transition">发展路线</a>
+        </div>
+        <button class="bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-600 transition shadow-lg shadow-blue-200">
+            申请演示
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 px-6 overflow-hidden gradient-bg">
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <h1 class="animate__animated animate__fadeInDown text-4xl md:text-6xl font-bold mb-6 text-dark leading-tight">
+                让每一分都 <span class="text-primary italic">落地有声</span>
+            </h1>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                打通全国招生大数据，结合 AI 智能预测模型，为中国考生提供最科学、最人性化的高考志愿决策方案。
+            </p>
+            <div class="animate__animated animate__fadeInUp animate__delay-1s flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="#demo" class="bg-primary text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition shadow-xl shadow-blue-200">
+                    立刻模拟填报
+                </a>
+                <a href="file:///Users/tradingfront/Projects/Volunteer/GOALFINDER-DESIGN.md" class="bg-white border-2 border-primary/20 text-primary px-8 py-4 rounded-xl font-bold hover:bg-gray-50 transition">
+                    查阅技术白皮书
+                </a>
+            </div>
+        </div>
+        
+        <!-- Background Elements -->
+        <div class="absolute top-20 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute bottom-10 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16 scroll-reveal">
+            <h2 class="text-3xl font-bold text-dark mb-4">领先的行业技术标准</h2>
+            <div class="w-20 h-1.5 bg-secondary mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 card-hover transition scroll-reveal">
+                <div class="w-12 h-12 bg-blue-50 text-primary rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4">AI 数据自动抓取</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    Python 分布式爬虫集群自动解析全国 31 省市考试院 PDF 招生计划与历年投档线，实时监控政策异动。
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 card-hover transition scroll-reveal" style="transition-delay: 100ms;">
+                <div class="w-12 h-12 bg-green-50 text-secondary rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4">位次级精准推荐</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    基于“位次偏移法”的概率模型，精准划分“冲/稳/保”区间，将录取确定性推向极致。
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 card-hover transition scroll-reveal" style="transition-delay: 200ms;">
+                <div class="w-12 h-12 bg-yellow-50 text-accent rounded-xl flex items-center justify-center mb-6 text-xl">🏆</div>
+                <h3 class="text-xl font-bold mb-4">全自动志愿表诊断</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    一键扫描志愿梯度、服从调剂风险及院校偏好，像代码审查一样排查每一行填报风险。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section (Simulation UI) -->
+    <section id="demo" class="py-20 bg-dark text-white overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="scroll-reveal">
+                <h2 class="text-3xl font-bold mb-6">更直观的决策体验</h2>
+                <p class="text-gray-400 mb-8">
+                    我们摈弃了传统的复杂表格，将海量数据转化为直观的录取概率视图。家长不再需要翻阅厚厚的《招生指南》，只需输入位次，即可看见未来。
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-start space-x-3">
+                        <span class="text-secondary">✓</span>
+                        <span>院校投档概率分级预警 (红/黄/绿)</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <span class="text-secondary">✓</span>
+                        <span>新高考专业组细则强约束校验</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <span class="text-secondary">✓</span>
+                        <span>专业倾向性 AI 性向测试映射</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Mock UI Console -->
+            <div class="bg-gray-800 p-2 rounded-2xl border border-gray-700 shadow-2xl animate__animated animate__pulse animate__infinite animate__slower scroll-reveal">
+                <div class="bg-gray-900 rounded-xl p-6">
+                    <div class="flex justify-between items-center mb-10">
+                        <span class="text-xs text-gray-500 font-mono">STATUS: SIMULATING...</span>
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                            <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                            <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-center bg-gray-800/50 p-4 rounded-lg border-l-4 border-primary">
+                            <div>
+                                <h4 class="font-bold text-sm">中山大学 (C970)</h4>
+                                <p class="text-[10px] text-gray-500">计算机科学与技术</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-primary font-bold">78%</span>
+                                <p class="text-[8px] text-primary/50 uppercase">Stable 稳</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-800/50 p-4 rounded-lg border-l-4 border-secondary">
+                            <div>
+                                <h4 class="font-bold text-sm">华南理工大学 (A561)</h4>
+                                <p class="text-[10px] text-gray-500">软件工程</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-secondary font-bold">94%</span>
+                                <p class="text-[8px] text-secondary/50 uppercase">Safe 保</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-800/50 p-4 rounded-lg border-l-4 border-red-400">
+                            <div>
+                                <h4 class="font-bold text-sm">上海交通大学 (B230)</h4>
+                                <p class="text-[10px] text-gray-500">人工智能精尖班</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-red-400 font-bold">12%</span>
+                                <p class="text-[8px] text-red-400/50 uppercase">Reach 冲</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="py-24 px-6 max-w-4xl mx-auto">
+        <div class="text-center mb-16 scroll-reveal">
+            <h2 class="text-3xl font-bold text-dark mb-4">发展路线图</h2>
+        </div>
+
+        <div class="relative border-l-2 border-primary/20 ml-4 space-y-12">
+            <!-- Phase 1 -->
+            <div class="relative pl-8 scroll-reveal">
+                <div class="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full"></div>
+                <h4 class="text-lg font-bold text-dark mb-2">阶段一：基础骨架与算法建模 (2026.04)</h4>
+                <p class="text-gray-500 text-sm">完成 Python 爬虫集群搭建，对接 2021-2025 年历年位次库。</p>
+            </div>
+            <!-- Phase 2 -->
+            <div class="relative pl-8 scroll-reveal" style="transition-delay: 100ms;">
+                <div class="absolute -left-2 top-0 w-4 h-4 bg-primary/30 rounded-full border-2 border-primary"></div>
+                <h4 class="text-lg font-bold text-dark mb-2">阶段二：AI 简章解析与诊断引擎 (2026.05)</h4>
+                <p class="text-gray-500 text-sm">整合 LLM 批量解析全国各校招生章程，上线志愿表智能风险扫描功能。</p>
+            </div>
+            <!-- Phase 3 -->
+            <div class="relative pl-8 scroll-reveal" style="transition-delay: 200ms;">
+                <div class="absolute -left-2 top-0 w-4 h-4 bg-gray-200 rounded-full"></div>
+                <h4 class="text-lg font-bold text-dark mb-2">阶段三：实时突发数据攻坚 (2026.06)</h4>
+                <p class="text-gray-500 text-sm">针对今年最新位次表进行秒级抓取与人工复核，支持高考出分周的极致高并发。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-12 px-6 text-center">
+        <div class="flex items-center justify-center space-x-2 mb-6">
+            <div class="w-6 h-6 bg-primary rounded flex items-center justify-center text-white font-bold text-xs">G</div>
+            <span class="text-lg font-bold text-primary">GoalFinder</span>
+        </div>
+        <p class="text-gray-500 text-xs mb-4">© 2026 GoalFinder. All rights reserved.</p>
+        <p class="text-gray-400 text-[10px]">基于工业级数据设计标准，助力每一个教育梦想。</p>
+    </footer>
+
+    <script>
+        // Scroll Reveal Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
